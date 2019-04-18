@@ -1,0 +1,54 @@
+name: python3-cherrypy
+buildsystem: simple
+build-commands:
+- pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} cherrypy
+sources:
+- type: file
+  url: https://pypi.python.org/packages/7d/92/dbd9be487de6f1b1387ea2725d54ff2c0e841b0af0c4626a21751d6e0883/CherryPy-3.5.0.zip#md5=b7af7b29d64d8019c8280e34a8b5443d
+  sha256: 2597638d47bc86e1e6952358ed877c92fe935a51afae1aa71157269aa2b4ba3a
+modules:
+#pip3 install does not work for cheroot
+  - name: python3-cheroot
+    buildsystem: simple
+    build-commands:
+    - python3 setup.py install --prefix=${FLATPAK_DEST}
+    ensure-writable:
+    - /lib/python3.7/site-packages/easy-install.pth
+    - /lib/python3.7/site-packages/setuptools.pth
+    sources:
+    - type: archive
+      url: https://files.pythonhosted.org/packages/09/c0/e012219265c83f70b381b4249df50b4a2923bfd9cb0219900e5c2f158c90/cheroot-6.5.4.tar.gz
+      sha256: beb8eb9eeff5746059607e81b72efd6f4ca099111dc13f8961ae9e4f63f7786b
+    modules:
+      - name: python3-more-itertools
+        buildsystem: simple
+        build-commands:
+        - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} more-itertools
+        sources:
+        - type: file
+          url: https://files.pythonhosted.org/packages/29/ed/3a85eb4afdce6dc33e78dad885e17c678db8055bf65353e0de4944c72a40/more-itertools-7.0.0.tar.gz
+          sha256: c3e4748ba1aad8dba30a4886b0b1a2004f9a863837b8654e7059eebf727afa5a
+      - name: python3-setuptools-scm
+        buildsystem: simple
+        build-commands:
+        - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} setuptools-scm
+        sources:
+        - type: file
+          url: https://files.pythonhosted.org/packages/54/85/514ba3ca2a022bddd68819f187ae826986051d130ec5b972076e4f58a9f3/setuptools_scm-3.2.0.tar.gz
+          sha256: 52ab47715fa0fc7d8e6cd15168d1a69ba995feb1505131c3e814eb7087b57358
+      - name: python3-setuptools-scm-git-archive
+        buildsystem: simple
+        build-commands:
+        - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} setuptools-scm-git-archive
+        sources:
+        - type: file
+          url: https://files.pythonhosted.org/packages/7e/2c/0c15b29a1b5940250bfdc4a4f53272e35cd7cf8a34159291b6b4ec9eb291/setuptools_scm_git_archive-1.1.tar.gz
+          sha256: 6026f61089b73fa1b5ee737e95314f41cb512609b393530385ed281d0b46c062
+      - name: python3-lru
+        buildsystem: simple
+        build-commands:
+        - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} backports.functools_lru_cache
+        sources:
+        - type: file
+          url: https://files.pythonhosted.org/packages/57/d4/156eb5fbb08d2e85ab0a632e2bebdad355798dece07d4752f66a8d02d1ea/backports.functools_lru_cache-1.5.tar.gz
+          sha256: 9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a

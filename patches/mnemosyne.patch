@@ -1,0 +1,8 @@
+--- Mnemosyne-2.6.1/mnemosyne/pyqt_ui/mnemosyne	2018-05-14 15:02:25.354438000 +0200
++++ mnemosyne/pyqt_ui/mnemosyne	2018-05-14 15:02:47.863096000 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ #
+ # Mnemosyne <Peter.Bienstman@UGent.be>

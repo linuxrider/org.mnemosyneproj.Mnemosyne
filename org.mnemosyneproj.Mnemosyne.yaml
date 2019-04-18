@@ -1,0 +1,26 @@
+---
+app-id: org.mnemosyneproj.Mnemosyne
+branch: '2.6.1'
+runtime: org.kde.Platform
+runtime-version: '5.12'
+sdk: org.kde.Sdk
+command: mnemosyne
+rename-desktop-file: mnemosyne.desktop
+rename-icon: mnemosyne
+copy-icon: true
+finish-args:
+- --device=dri
+- --share=ipc
+- --share=network
+- --socket=x11
+- --socket=wayland
+- --filesystem=home
+modules:
+- modules/python3-pyqt5.yaml
+- modules/python3-pyqtwebengine.yaml
+- modules/python3-pyopengl.yaml
+- modules/python3-matplotlib.yaml
+- modules/python3-cherrypy.yaml
+- modules/python3-webob.yaml
+- mnemosyne.yaml
+

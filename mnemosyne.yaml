@@ -1,0 +1,24 @@
+name: mnemosyne
+buildsystem: simple
+build-commands:
+  - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} .
+post-install:
+  - install -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps -Dm644 ${FLATPAK_DEST}/share/icons/mnemosyne.png
+build-options:
+  env:
+    PYTHONUSERBASE: "/app"
+    PYTHONPATH: "/app/lib/python3.7/site-packages"
+sources:
+- type: archive
+  url: https://sourceforge.net/projects/mnemosyne-proj/files/mnemosyne/mnemosyne-2.6.1/Mnemosyne-2.6.1.tar.gz
+  sha256: 6331241bc7caf26fed2e4d32c3c18da33116389b67af621da679a950f08c9c75
+# needed to apply patches
+- type: shell
+  commands:
+    - sed -i 's/\r//g' setup.py
+    - sed -i 's/\r//g' mnemosyne/pyqt_ui/mnemosyne
+    - sed -i 's/\r//g' mnemosyne.desktop
+- type: patch
+  path: patches/setup_py.patch
+- type: patch
+  path: patches/mnemosyne.patch

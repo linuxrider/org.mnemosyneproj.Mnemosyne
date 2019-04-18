@@ -1,0 +1,18 @@
+name: python3-pyqtwebengine
+buildsystem: simple
+no-autogen: true
+build-commands:
+  - python3 configure.py
+    --sip-incdir=/app/include/python3.7
+    --destdir=/app/lib/python3.7/site-packages/PyQt5
+    --sipdir=/app/share/sip
+    --stubsdir=/app/lib/python3.7/site-packages/PyQt5
+    --apidir=/app/qsci/api/python
+    --pyqt-sipdir=/app/share/sip
+    --no-dist-info
+  - make -j $FLATPAK_BUILDER_N_JOBS
+  - make install
+sources:
+- type: archive
+  url: https://www.riverbankcomputing.com/static/Downloads/PyQtWebEngine/5.12.1/PyQtWebEngine_gpl-5.12.1.tar.gz
+  sha256: 860704672ea1b616e1347be1f347bc1c749e64ed378370863fe209e84e9bd473
