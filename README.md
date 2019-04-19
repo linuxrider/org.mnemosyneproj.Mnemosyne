@@ -4,7 +4,7 @@
 * Make sure flatpak and flatpak-builder is installed.
 For Ubuntu run:
 ```
-sudo apt-get install flatpak flatpa-builder
+sudo apt-get install flatpak flatpak-builder
 ```
 Now the flatpak bits can be run.
 * installing the flathub repository for dependencies
