@@ -28,3 +28,5 @@ $ rm -rf .flatpak-builder/ build/
 $ flatpak uninstall --unused --user
 $ flatpak remote-delete --user flathub
 ```
+## Configuration
+Configuration resides in `~/var/app/org.mnemosyneproj.Mnemosyne/`
