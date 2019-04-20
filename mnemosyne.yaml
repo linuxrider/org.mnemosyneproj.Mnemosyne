@@ -4,6 +4,7 @@ build-commands:
   - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} .
 post-install:
   - install -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps -Dm644 ${FLATPAK_DEST}/share/icons/mnemosyne.png
+  - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo org.mnemosyneproj.Mnemosyne.appdata.xml
 build-options:
   env:
     PYTHONUSERBASE: "/app"
@@ -22,3 +23,5 @@ sources:
   path: patches/setup_py.patch
 - type: patch
   path: patches/mnemosyne.patch
+- type: file
+  path: org.mnemosyneproj.Mnemosyne.appdata.xml
