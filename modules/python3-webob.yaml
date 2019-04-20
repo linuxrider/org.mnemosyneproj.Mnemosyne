@@ -1,4 +1,4 @@
-name: python-webob
+name: python3-webob
 buildsystem: simple
 build-commands:
 - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}

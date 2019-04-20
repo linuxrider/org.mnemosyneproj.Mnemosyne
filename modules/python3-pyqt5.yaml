@@ -1,4 +1,4 @@
-name: python-pyqt5
+name: python3-pyqt5
 buildsystem: simple
 no-autogen: true
 build-commands:
@@ -18,7 +18,7 @@ sources:
     url: https://www.riverbankcomputing.com/static/Downloads/PyQt5/5.12.1/PyQt5_gpl-5.12.1.tar.gz
     sha256: 3718ce847d824090fd5f95ff3f13847ee75c2507368d4cbaeb48338f506e59bf
 modules:
-- name: python-sip
+- name: python3-sip
   buildsystem: simple
   no-autogen: true
   build-commands:
