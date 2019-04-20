@@ -22,5 +22,6 @@ modules:
 - modules/python3-matplotlib.yaml
 - modules/python3-cherrypy.yaml
 - modules/python3-webob.yaml
+- modules/python3-pillow.yaml
 - mnemosyne.yaml
 
