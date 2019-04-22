@@ -24,5 +24,6 @@ modules:
 - modules/python3-cherrypy.yaml
 - modules/python3-webob.yaml
 - modules/python3-pillow.yaml
+- modules/mplayer.yaml
 - mnemosyne.yaml
 
