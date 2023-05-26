@@ -15,7 +15,7 @@ build-commands:
   - make install
 sources:
   - type: archive
-    url: https://www.riverbankcomputing.com/static/Downloads/PyQt5/5.12.1/PyQt5_gpl-5.12.1.tar.gz
+    url: https://ftp.icm.edu.pl/packages/kde-applicationdata/krita/build/dependencies/PyQt5_gpl-5.12.1.tar.gz
     sha256: 3718ce847d824090fd5f95ff3f13847ee75c2507368d4cbaeb48338f506e59bf
 modules:
 - name: python3-sip
@@ -35,5 +35,5 @@ modules:
     - /bin
   sources:
     - type: archive
-      url: https://www.riverbankcomputing.com/static/Downloads/sip/4.19.15/sip-4.19.15.tar.gz
-      sha256: 2b5c0b2c0266b467b365c21376d50dde61a3236722ab87ff1e8dacec283eb610
+      url: https://www.riverbankcomputing.com/static/Downloads/sip/4.19.25/sip-4.19.25.tar.gz
+      sha256: b39d93e937647807bac23579edbff25fe46d16213f708370072574ab1f1b4211
