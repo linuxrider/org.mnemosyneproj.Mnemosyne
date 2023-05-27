@@ -17,12 +17,13 @@ sources:
 # needed to apply patches
 - type: shell
   commands:
+  # remove carriage return for patching
     - sed -i 's/\r//g' setup.py
-    - sed -i 's/\r//g' mnemosyne/pyqt_ui/mnemosyne
+    - sed -i 's/\r//g' mnemosyne/libmnemosyne/gui_translators/gettext_gui_translator.py
     - sed -i 's/\r//g' mnemosyne.desktop
 - type: patch
   path: patches/setup_py.patch
 - type: patch
-  path: patches/mnemosyne.patch
+  path: patches/gettext_gui_translator_py.patch
 - type: file
   path: org.mnemosyneproj.Mnemosyne.appdata.xml
