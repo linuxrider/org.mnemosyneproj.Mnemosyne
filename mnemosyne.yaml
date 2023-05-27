@@ -3,16 +3,17 @@ buildsystem: simple
 build-commands:
   - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} .
 post-install:
-  - install -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps -Dm644 ${FLATPAK_DEST}/share/icons/mnemosyne.png
+  - install -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps -Dm644 ${FLATPAK_DEST}/pixmaps/mnemosyne.png
   - install -Dm644 -t ${FLATPAK_DEST}/share/metainfo org.mnemosyneproj.Mnemosyne.appdata.xml
+  - install -Dm644 -t ${FLATPAK_DEST}/share/applications mnemosyne.desktop
 build-options:
   env:
-    PYTHONUSERBASE: "/app"
-    PYTHONPATH: "/app/lib/python3.7/site-packages"
+    PYTHONUSERBASE: "${FLATPAK_DEST}"
+    PYTHONPATH: "/lib/python3.9/site-packages,${FLATPAK_DEST}/lib/python3.9/site-packages"
 sources:
 - type: archive
-  url: https://sourceforge.net/projects/mnemosyne-proj/files/mnemosyne/mnemosyne-2.6.1/Mnemosyne-2.6.1.tar.gz
-  sha256: 6331241bc7caf26fed2e4d32c3c18da33116389b67af621da679a950f08c9c75
+  url: https://sourceforge.net/projects/mnemosyne-proj/files/mnemosyne/mnemosyne-2.10.1/Mnemosyne-2.10.1.tar.gz
+  sha256: cc8efd8ae4576f94b463ceca7dd1be1ca7345d535038070147b66dfce75a04fe
 # needed to apply patches
 - type: shell
   commands:

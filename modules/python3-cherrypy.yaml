@@ -7,27 +7,32 @@ sources:
   url: https://pypi.python.org/packages/7d/92/dbd9be487de6f1b1387ea2725d54ff2c0e841b0af0c4626a21751d6e0883/CherryPy-3.5.0.zip#md5=b7af7b29d64d8019c8280e34a8b5443d
   sha256: 2597638d47bc86e1e6952358ed877c92fe935a51afae1aa71157269aa2b4ba3a
 modules:
-#pip3 install does not work for cheroot
   - name: python3-cheroot
     buildsystem: simple
     build-commands:
-    - python3 setup.py install --prefix=${FLATPAK_DEST}
+    - pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} . --no-build-isolation
     ensure-writable:
-    - /lib/python3.7/site-packages/easy-install.pth
-    - /lib/python3.7/site-packages/setuptools.pth
+    - /lib/python3.9/site-packages/easy-install.pth
+    - /lib/python3.9/site-packages/setuptools.pth
     sources:
     - type: archive
-      url: https://files.pythonhosted.org/packages/09/c0/e012219265c83f70b381b4249df50b4a2923bfd9cb0219900e5c2f158c90/cheroot-6.5.4.tar.gz
-      sha256: beb8eb9eeff5746059607e81b72efd6f4ca099111dc13f8961ae9e4f63f7786b
+      url: https://files.pythonhosted.org/packages/08/7c/95c154177b16077de0fec1b821b0d8b3df2b59c5c7b3575a9c1bf52a437e/cheroot-10.0.0.tar.gz
+      sha256: 59c4a1877fef9969b3c3c080caaaf377e2780919437853fc0d32a9df40b311f0
+    - type: file
+      url: https://files.pythonhosted.org/packages/81/52/ca26d1964531e823961f761026138189f630aaf49fb959c8ab6e1262dc74/cheroot-10.0.0-py3-none-any.whl
+      sha256: 8f65dd38ad3d56419cfe2d1b5e4b4e3282b1d58758ca2a336231641a80cf0717
+    - type: file
+      url: https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl
+      sha256: f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8
     modules:
       - name: python3-more-itertools
         buildsystem: simple
         build-commands:
-        - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} more-itertools
+        - pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} more-itertools --no-build-isolation
         sources:
         - type: file
-          url: https://files.pythonhosted.org/packages/29/ed/3a85eb4afdce6dc33e78dad885e17c678db8055bf65353e0de4944c72a40/more-itertools-7.0.0.tar.gz
-          sha256: c3e4748ba1aad8dba30a4886b0b1a2004f9a863837b8654e7059eebf727afa5a
+          url: https://files.pythonhosted.org/packages/85/01/e2678ee4e0d7eed4fd6be9e5b043fff9d22d245d06c8c91def8ced664189/more_itertools-9.1.0-py3-none-any.whl
+          sha256: d2bc7f02446e86a68911e58ded76d6561eea00cddfb2a91e7019bbb586c799f3
       - name: python3-setuptools-scm
         buildsystem: simple
         build-commands:
