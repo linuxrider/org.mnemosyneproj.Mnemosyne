@@ -23,8 +23,8 @@ sources:
     url: https://files.pythonhosted.org/packages/9d/19/59961b522e6757f0c9097e4493fa906031b95b3ebe9360b2c3083561a6b4/certifi-2023.5.7-py3-none-any.whl
     sha256: c6c2e98f5c7869efca1f8916fed228dd91539f9f1b444c314c06eef02980c716
   - type: file
-    url: https://files.pythonhosted.org/packages/33/97/9967fb2d364a9da38557e4af323abcd58cc05bdd8f77e9fd5ae4882772cc/charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-    sha256: 21fa558996782fc226b529fdd2ed7866c2c6ec91cee82735c98a197fae39f706
+    url: https://files.pythonhosted.org/packages/bf/a0/188f223c7d8b924fb9b554b9d27e0e7506fd5bf9cfb6dbacb2dfd5832b53/charset_normalizer-3.2.0-py3-none-any.whl
+    sha256: 8e098148dd37b4ce3baca71fb394c81dc5d9c7728c95df695d2dca218edf40e6
   - type: file
     url: https://files.pythonhosted.org/packages/f9/7b/9f136106dc5824dc98185c97991d3cd9b53e70a197154dd49f7b899128f6/google_trans_new-1.1.9-py3-none-any.whl
     sha256: 796c20c73ad5f473f126f3b8cbdcaf3fa96e7eabef18e73aac9e4ccc68bb72ed
